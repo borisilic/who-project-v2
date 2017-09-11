@@ -51,6 +51,7 @@ for k, v in vaccines.items():
     print(k, v)
 
 countries['Australia'] = vaccines
+countries['China'] = vaccines
 
 firebase = pyrebase.initialize_app(config)
 
