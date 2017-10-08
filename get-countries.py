@@ -10,6 +10,7 @@ import requests
 import pyrebase
 from bs4 import BeautifulSoup
 import time
+from datetime import datetime
 
 config = {
     "apiKey": "AIzaSyAXURMO3ANz5mPSytykWLpZTJ0oGWmgoXI",
@@ -95,6 +96,7 @@ for code in countries_codes:
     # each country. But because we want the format to be 'Australia': Vaccines rather than 'AUS' : Vaccines, the
     # countryKeyValuePairs list is used to get the relevant name of countries based on their code.
     vaccinesByCountry[countryKeyValuePairs[code]] = vaccines
+    vaccinesByCountry['DateUpdated'] = datetime.now().date()
 
 
 # Pyrebase library is used to push the information to firebase.
