@@ -96,7 +96,7 @@ for code in countries_codes:
     # each country. But because we want the format to be 'Australia': Vaccines rather than 'AUS' : Vaccines, the
     # countryKeyValuePairs list is used to get the relevant name of countries based on their code.
     vaccinesByCountry[countryKeyValuePairs[code]] = vaccines
-    vaccinesByCountry['DateUpdated'] = datetime.now().date()
+    vaccinesByCountry['DateUpdated'] = datetime.now().strftime('%A %d %B %Y')
 
 
 # Pyrebase library is used to push the information to firebase.
